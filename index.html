@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations!</title>
+<style>
+  .container {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .input-box {
+    border: 2px solid green;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: green;
+  }
+
+  .share-button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .congratulation-text {
+    font-style: italic;
+    color: green;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="input-box">
+      Congratulations for your participation!<br>
+      Well-wisher now awards you Ksh. 65,000.<br>
+      Congratulations! 
+    </div>
+    <button class="share-button" onclick="shareOnWhatsApp()">Share</button>
+    <p class="congratulation-text">Congratulations! share the link with atleast
+        five friends for you to receive your gift.
+    </p>
+  </div>
+
+  <script>
+    function shareOnWhatsApp() {
+      var shareText = "Congratulations! Well-wisher now awards you Ksh. 65,000. Congratulations!";
+      var url = 'https://proms.vercel.app/'; // Replace this with your actual link
+      var shareLink = encodeURIComponent(shareText + " " + url);
+      var whatsappURL = 'https://api.whatsapp.com/send?text=' + shareLink;
+      window.open(whatsappURL);
+    }
+  </script>
+</body>
+</html>
